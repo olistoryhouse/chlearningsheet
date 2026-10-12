@@ -17,7 +17,12 @@
     <label><input type="radio" name="lv" value="2"> 二年級 四要素句</label>
     <label><input type="radio" name="lv" value="3"> 三年級 說清楚說生動</label>
   </span>
-  <span>題數：<select id="count"><option>3</option><option>4</option><option selected>5</option></select></span>
+  <span id="srcWrap">出題方式：
+    <label><input type="radio" name="src" value="lesson" checked> 課表</label>
+    <label><input type="radio" name="src" value="random"> 隨機</label>
+    <select id="lesson"></select>
+  </span>
+  <span id="countWrap">題數：<select id="count"><option>3</option><option>4</option><option selected>5</option></select></span>
   <span>書寫格：
     <label><input type="radio" name="mode" value="hz" checked> 國字格</label>
     <label><input type="radio" name="mode" value="zy"> 注音格</label>
