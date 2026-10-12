@@ -1,0 +1,9 @@
+/* 列印：A4 無邊界，每頁分頁 */
+@page{size:A4;margin:0}
+@media print{
+  body{background:#fff}
+  .panel{display:none}
+  #sheets{padding:0}
+  .page{margin:0;box-shadow:none;break-after:page}
+  .page:last-child{break-after:auto}
+}

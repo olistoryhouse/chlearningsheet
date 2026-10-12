@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>照樣造句學習單（低年級）</title>
+<link rel="preload" href="fonts/BpmfZihiKaiStd-Regular.ttf" as="font" type="font/ttf" crossorigin>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/print.css">
+</head>
+<body>
+
+<div class="panel">
+  <h1>照樣造句學習單</h1>
+  <span>年級：
+    <label><input type="radio" name="lv" value="1" checked> 一年級 完整句</label>
+    <label><input type="radio" name="lv" value="2"> 二年級 四要素句</label>
+    <label><input type="radio" name="lv" value="3"> 三年級 說清楚說生動</label>
+  </span>
+  <span>題數：<select id="count"><option>3</option><option>4</option><option selected>5</option></select></span>
+  <span>書寫格：
+    <label><input type="radio" name="mode" value="hz" checked> 國字格</label>
+    <label><input type="radio" name="mode" value="zy"> 注音格</label>
+    <label id="zyWrap"><input type="checkbox" id="zy" checked> 國字格旁附注音欄</label>
+  </span>
+  <span>插圖：
+    <label><input type="radio" name="art" value="color" checked> 彩色</label>
+    <label><input type="radio" name="art" value="line"> 著色線稿</label>
+  </span>
+  <label><input type="checkbox" id="withGuide" checked> 附引導頁</label>
+  <button class="gray" id="reshuffle">重新抽題</button>
+  <button id="printBtn">列印</button>
+  <span id="fontStatus">偵測字型中…</span>
+  <span id="warn"></span>
+</div>
+
+<div id="sheets"></div>
+
+<script src="data/grade1.js"></script>
+<script src="data/grade2.js"></script>
+<script src="data/grade3.js"></script>
+<script src="js/svgs.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
