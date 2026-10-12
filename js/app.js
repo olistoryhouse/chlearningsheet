@@ -85,14 +85,19 @@ function detectFont(){
   else { el.textContent='注音字型：載入失敗，請確認 fonts/ 資料夾完整'; el.className='ng'; }
 }
 
+// 各年級預設書寫格：一年級用注音格（國字格＋注音欄會超出 A4），二、三年級用國字格
+const DEFAULT_MODE={1:'zy',2:'hz',3:'hz'};
+function applyDefaultMode(){ q(`input[name=mode][value=${DEFAULT_MODE[q('input[name=lv]:checked').value]}]`).checked=true; }
+
 /* ---------- 事件 ---------- */
 $('count').onchange=()=>build(false);
 $('withGuide').onchange=()=>build(false);
 $('zy').onchange=()=>build(false);
 document.querySelectorAll('input[name=mode],input[name=art]').forEach(r=>r.onchange=()=>build(false));
-document.querySelectorAll('input[name=lv]').forEach(r=>r.onchange=()=>build(true));
+document.querySelectorAll('input[name=lv]').forEach(r=>r.onchange=()=>{applyDefaultMode();build(true);});
 $('reshuffle').onclick=()=>build(true);
 $('printBtn').onclick=()=>window.print();
 
+applyDefaultMode();
 build(true);
 (document.fonts ? document.fonts.ready : Promise.resolve()).then(()=>{ detectFont(); checkOverflow(); });
